@@ -31,14 +31,21 @@ URL: https://www.hackerearth.com/problem/algorithm/chandu-and-his-interns/descri
 CAUTION: Time Limit Exceeded
 */
 using namespace std;
-string drink(long int n)
+string drink(long int temp)
 {
-    int count =0;
-    for(int i = 1; i <= n; i++)
+    int count = 0;
+    for(int i = 1; i * i < temp; ++i)
     {
-        if(n % i == 0)
+        if(temp % i == 0)
         {
-            count++;
+            if(i * i == temp)
+            {
+                count++;
+            }
+            else
+            {
+                count+=2;
+            }
         }
         if(count>=4)
         {
