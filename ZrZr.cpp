@@ -28,6 +28,10 @@ using namespace std;
 //the earlier solution was partially accepted because I forget to pass n as long int
 long int trail(long int n)
 {
+    //ALERT: finding the factorial is a very very inefficient approach to the problem
+    //for bigger inputs if you are trying to find factorial and then trailing zero this takes forever so you will get TIME
+    //LIMIT EXCEEDED problem
+    //the below approach the problem in O(logN)
     long int cnt = 0;
     while(n>0)
     {
