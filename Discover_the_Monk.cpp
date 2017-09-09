@@ -48,12 +48,15 @@ int main()
     while(n--)
     {
         cin>>temp;
+        //using vectors for dynamic array Refer STL in C++
         vec.push_back(temp);
     }
+    //since vector is not sorted, sort the vector/array so that we can use binary_search for faster search
     sort(vec.begin(), vec.end());
     while(q--)
     {
         cin>>x;
+        //use binary search
         if(std::binary_search(vec.begin(),vec.end(),x))
         {
             cout<<"YES"<<endl;
