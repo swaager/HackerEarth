@@ -32,10 +32,13 @@ string vowel(string s)
     bool hasi = false;
     bool haso = false;
     bool hasu = false;
+    //use iterators over string
+    //refer iterators here if needed: http://www.cplusplus.com/reference/string/string/begin/
     for(string::iterator it = s.begin(); it != s.end();++it)
     {
         switch(*it)
         {
+            //if any of the vowels are present set flag as TRUE
             case 'a': hasa = true; break;
             case 'e': hase = true; break;
             case 'i': hasi = true; break;
@@ -43,6 +46,7 @@ string vowel(string s)
             case 'u': hasu = true; break;
         }
     }
+    //if all vowel are present then only return YES
     if(hasa && hase && hasi && haso && hasu)
     {
         return "YES";
