@@ -13,7 +13,7 @@ For each testcase, print the required answer in one line.
 
 Constraints: 
 1 ≤ T ≤ 10 
-0 ≤ A ≤ B ≤ 105
+0 ≤ A ≤ B ≤ 10^5
 
 SAMPLE INPUT 
 2
@@ -27,6 +27,7 @@ SAMPLE OUTPUT
 using namespace std;
 bool ispalin(string s)
 {
+    //check if string is palindrome
     if( s == string(s.rbegin(), s.rend()))
     {
         return true;
@@ -38,6 +39,8 @@ int counts(long int a, long int b)
     int cnt = 0;
     for(long int i = a; i <= b; i++)
     {
+        //imo checking if integer is palindrome or not is slower compared to checking if string is palindrome or not
+        //because our input is until 10^5, so easier and faster way may be to convert to string and check if its palindrome
         if(ispalin(to_string(i)))
             cnt++;
     }
