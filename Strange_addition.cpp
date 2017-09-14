@@ -42,17 +42,14 @@ string find(long int n1, long int n2)
     //here we reverse the srtring
     reverse(num1.begin(), num1.end());
     reverse(num2.begin(), num2.end());
-    //now reversed num1 and num2 we are converting back to int so that we can sum the reversed number
-    int n = stoi(num1);
-    int m = stoi(num2);
-    //calculate sum of reversed nums
-    int sum = n + m;
-    string num_sum = to_string(sum);
+    //now reversed num1 and num2 we are converting back to int so that we can sum the reversed number, sum and again convert back to string for easy reversing
+    string num_sum  = to_string(int(stoi(num1) + stoi(num2)));
     //again reverse the result too
     reverse(num_sum.begin(), num_sum.end());
     //chances are there the final result may contain leading zeros like in test case 3 so remove the leading zeros
     num_sum.erase(0, num_sum.find_first_not_of('0'));
     return num_sum;
+    
 }
 int main()
 {
