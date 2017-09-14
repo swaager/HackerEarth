@@ -21,12 +21,16 @@ https://www.hackerearth.com/practice/algorithms/string-algorithm/basics-of-strin
 using namespace std;
 void dandi(string s)
 {
+    //first check if it is palindrome, a set of numbers will be mirror number if only its a palindrome ;)
+    //if its not palindrome, just print no
     if(s != string(s.rbegin(), s.rend()))
     {
         cout<<"NO"<<endl;
     }
     else
     {
+        //if its palindrome check if it contains either of non mirror numbers, even if any of these are present then its 
+        // non mirror number
         if(
             (s.find('2') != string::npos) || 
             (s.find('3') != string::npos) ||
