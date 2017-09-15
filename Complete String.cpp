@@ -25,12 +25,14 @@ NO
 using namespace std;
 bool complete(string s)
 {
+    //there is no point in checking string of length lesser than 26 if its complete
     if(s.length()<26)
     {
         return false;
     }
     for(char ch = 'a'; ch <= 'z'; ch++)
     {
+        //if any of the ch is not found return false
         if(s.find(ch) == string::npos)
         {
             return false;
