@@ -52,14 +52,21 @@ int main()
         cin>>temp;
         vec.push_back(temp);
     }
+    //iterate over the vector
     for(it = vec.begin(); it != vec.end(); ++it)
     {
+        //*it returns the current string in iterator
         string temp = *it;
+        //we now reverse the string and store in fnd
         string fnd = string(temp.rbegin(), temp.rend());
+        //check if the reversed string is in vec
         if(find(vec.begin(), vec.end(), fnd) != vec.end())
         {
+            //finding the mid length to print middle character
             int mlen = (temp.length()/2);
             cout<<temp.length()<<" "<<temp.at(mlen)<<endl;
+            //if we do not erase, since there are two identical elements, it will print twice, so better remove the item 
+         //from vector
             vec.erase(remove(vec.begin(), vec.end(), temp), vec.end());
         }
     }
