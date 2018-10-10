@@ -1,3 +1,4 @@
+//https://www.hackerearth.com/practice/math/number-theory/basic-number-theory-1/practice-problems/algorithm/the-confused-monk/    
     #include<iostream>
     #include<algorithm> 
     using namespace std;
