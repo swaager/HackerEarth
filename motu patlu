@@ -1,0 +1,111 @@
+/*
+
+Motu and Patlu are very good friends and they love to eat ice-creams. Once they thought of playing a game, so they bought “n” ice-creams from the market of varying heights (may be same). They arranged the ice-creams in a line in random order. Motu starts to eat ice-creams from left to right and Patlu from right to left. The heights of the ice-creams are known.
+
+Motu eats the ice-cream as twice the speed of Patlu (that’s the secret for his health :p ). If, anyone of them is eating the ice-cream , then definitely other one cannot have that ice-cream. However, if both of them reach the same ice-cream, Motu snatches it away from Patlu (he got more power than patlu :( ) and eats it. The winner will be the one who will eat more number of ice-creams.
+
+Since, both of them are too busy in eating ice-creams they forgot to count the number of ice-creams they have already eaten. Can you help them in deciding the winner.
+
+P.S.- Since, ‘WINTER HAS ALREADY ARRIVED’ ,so ice-creams will not melt as it is freezing out there.
+
+Note : Time taken to eat a ice-cream is directly proportional to its height.
+
+Input :
+
+The first line contains one integer t, the number of test cases.
+
+The first line of each test case contains one integer n,the number of ice-creams.
+
+The second line contains a sequence , a1, a2, a3 . . . an where ai denotes height of ith ice-cream.
+
+Output :
+
+For each test case print two new lines.
+
+First line contains two spaced integers, the no. of ice-creams eaten by Motu and Patlu respectively.
+
+Second line contains the name of the winner, if motu eats more no. of icecreams print ‘Motu’ (without inverted commas), if patlu eats more no. of ice-creams print ‘Patlu’ (without inverted commas). In case of Tie print ‘Tie’ (without inverted commas).
+
+Constraints :
+
+1 ≤ t ≤ 100
+1 ≤ n ≤ 100000
+1 ≤ ai ≤ 10^9
+SAMPLE INPUT 
+3
+5
+2 6 2 1 7
+4
+15 2 1 3
+5
+2 4 12 4 7
+SAMPLE OUTPUT 
+4 1
+Motu
+1 3
+Patlu
+3 2
+Motu
+*/
+
+
+#include <iostream>
+using namespace std;
+int main() {
+	int num;
+	cin >> num;
+	while(num--)
+	{
+	    long long int n,a[100005],i,j,s,k,mp=0,np=0;
+	    cin>>n;s=0;k=0;
+	    for(i=0;i<n;i++)
+	    {
+	        cin>>a[i];
+	    }
+	    i=0;j=n-1;
+	    while(i<=j)
+	    {
+	        
+	        
+	        if(s<=k)
+	        {
+	            s=a[i]+s;
+	            i++;mp++;
+	        }
+	        else if(s>k)
+	        {
+	            k=a[j]*2+k;
+	            j--;np++;
+	        }
+	    }
+	    cout<<mp<<" "<<np<<endl;
+	    if(mp>np)
+	    {
+	        cout<<"Motu"<<endl;
+	    }
+	    else if(mp<np)
+	    {
+	        cout<<"Patlu"<<endl;
+	    }
+	    else if(mp==np)
+	    {
+	        cout<<"Tie"<<endl;
+	    }
+	}
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
